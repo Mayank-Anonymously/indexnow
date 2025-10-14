@@ -18,18 +18,18 @@ const filePath = path.join(process.cwd(), "data", "other-links.json");
 // List of Python scripts to trigger
 const pythonScripts = [
   //   "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\submit_form_json.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\thepages_show.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\ybookmarking.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\star_bookmarking.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\sbookmarkng.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\99bookmarking.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\bookmarkingfree.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\freebookmarking.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\freewebmarks.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\letsdobookmark.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\newsocialbookmarkingsite.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\pbookmarking.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\social-bookmarkingsite.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\thepages_show.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\ybookmarking.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\star_bookmarking.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\sbookmarkng.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\99bookmarking.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\bookmarkingfree.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\freebookmarking.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\freewebmarks.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\letsdobookmark.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\newsocialbookmarkingsite.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\pbookmarking.py",
+  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\sportunion.py",
   // Add more paths here as needed
 ];
 

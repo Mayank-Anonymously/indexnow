@@ -22,9 +22,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   data[id] = url;
 
-//   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  //   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
   // Return the redirect URL
-  const redirectUrl = `https://indexnow-sooty.vercel.app/redirects/${id}`;
+  const redirectUrl = `https://indexnow-nine.vercel.app/redirects/${id}`;
   res.status(201).json({ id, redirectUrl });
 }

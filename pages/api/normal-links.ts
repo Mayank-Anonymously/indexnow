@@ -107,21 +107,19 @@
 
 //   return res.status(405).json({ error: "Method not allowed" });
 // }
-
+// pages/api/submit-link.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 import axios from "axios";
 
 type SubmitRequest = {
-  url: string; // the URL you want to get indexed
+  url: string; // the URL to be indexed
 };
 
-const HOST = "indexnow-nine.vercel.app";
-// replace with your domain
-const API_KEY = "8b8a855443ae443ebd36a6626fb45bf5"; // replace with your IndexNow key
-const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
-const REDIRECTS_DIR = path.join(process.cwd(), "public", "redirects"); // will host redirect pages
+const HOST = "indexnow-nine.vercel.app"; // your domain
+const API_KEY = "8b8a855443ae443ebd36a6626fb45bf5"; // your IndexNow key
+const REDIRECTS_DIR = path.join(process.cwd(), "public", "redirects");
 
 // Ensure redirects directory exists
 if (!fs.existsSync(REDIRECTS_DIR))
@@ -131,28 +129,38 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== "POST") {
+  if (req.method !== "POST")
     return res.status(405).json({ error: "Method not allowed" });
-  }
 
   const { url } = req.body as SubmitRequest;
-
   if (!url) return res.status(400).json({ error: "Missing URL" });
 
   try {
-    // Create a simple redirect page for the URL
+    // 1️⃣ Create a unique redirect page
     const fileName = `redirect-${Date.now()}.html`;
     const filePath = path.join(REDIRECTS_DIR, fileName);
-    const redirectHtml = `<html><head><meta http-equiv="refresh" content="0; URL='${url}'" /></head><body>Redirecting to ${url}</body></html>`;
+
+    const redirectHtml = `<html>
+      <head>
+        <meta http-equiv="refresh" content="0; URL='${url}'" />
+      </head>
+      <body>Redirecting to <a href="${url}">${url}</a></body>
+    </html>`;
+
     fs.writeFileSync(filePath, redirectHtml, "utf8");
 
     const hostedUrl = `https://${HOST}/redirects/${fileName}`;
 
-    // Submit to IndexNow
+    // 2️⃣ Verify API key file exists
+    const keyFilePath = path.join(process.cwd(), "public", `${API_KEY}.txt`);
+    if (!fs.existsSync(keyFilePath))
+      return res.status(500).json({ error: "API key file missing in /public" });
+
+    // 3️⃣ Submit redirect page to IndexNow
     const payload = {
       host: HOST,
       key: API_KEY,
-      keyLocation: KEY_LOCATION,
+      keyLocation: `https://${HOST}/${API_KEY}.txt`,
       urlList: [hostedUrl],
     };
 

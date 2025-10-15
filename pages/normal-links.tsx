@@ -157,7 +157,7 @@ export default function Home() {
           links: linksArray,
           name: "jessy",
           email: "jessy@gamail.com",
-          url: "https://unitedddd.com",
+          url: linksText,
           message: "",
           repeat: repeatCount,
         }),

@@ -136,7 +136,7 @@ export default async function handler(
   }
 
   const { url } = req.body as SubmitRequest;
-  
+
   if (!url) return res.status(400).json({ error: "Missing URL" });
 
   try {

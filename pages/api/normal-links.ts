@@ -117,7 +117,7 @@ type SubmitRequest = {
   url: string; // the URL you want to get indexed
 };
 
-const HOST = "indexnow-sooty.vercel.app";
+const HOST = "indexnow-nine.vercel.app";
 // replace with your domain
 const API_KEY = "8b8a855443ae443ebd36a6626fb45bf5"; // replace with your IndexNow key
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;

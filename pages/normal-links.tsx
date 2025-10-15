@@ -154,12 +154,7 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          links: linksArray,
-          name: "jessy",
-          email: "jessy@gamail.com",
           url: linksText,
-          message: "",
-          repeat: repeatCount,
         }),
       });
 

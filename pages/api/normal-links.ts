@@ -119,7 +119,7 @@ type SubmitRequest = {
 
 const HOST = "indexnow-sooty.vercel.app";
 // replace with your domain
-const API_KEY = "629e7928d0d9411e8a43387c18f5da20"; // replace with your IndexNow key
+const API_KEY = "8b8a855443ae443ebd36a6626fb45bf5"; // replace with your IndexNow key
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
 const REDIRECTS_DIR = path.join(process.cwd(), "public", "redirects"); // will host redirect pages
 

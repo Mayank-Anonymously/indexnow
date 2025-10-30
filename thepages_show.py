@@ -79,7 +79,7 @@ def run_scraper():
                 # Fill form fields
                 driver.find_element(By.NAME, "name").send_keys(name)
                 driver.find_element(By.NAME, "email_hp").send_keys(email)
-                driver.find_element(By.NAME, "text").send_keys(f"{message}\n{link}")
+                driver.find_element(By.NAME, "text").send_keys(f"{k}\n{link}")
 
                 # Solve spam check
                 spam_result = solve_spam(driver)

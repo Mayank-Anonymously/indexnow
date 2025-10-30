@@ -23,13 +23,17 @@ def run_scraper(repeat: int):
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--headless=new")
+
 
     service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     for _ in range(repeat):
         for entry in entries:
-            # Loop through all links in the array
+            # Loop through all links in the array   
+            all_links_html = "\n".join(entry["link"])
+            message_body = f"{entry.get('message', '')}\n{all_links_html}"
             for link in entry["link"]:
                 driver.get(FORM_URL)
                 time.sleep(2)
@@ -37,7 +41,7 @@ def run_scraper(repeat: int):
                 driver.find_element(By.ID, "x5gb02-topic-form-name").send_keys(entry["name"])
                 driver.find_element(By.ID, "x5gb02-topic-form-email").send_keys(entry["email"])
                 driver.find_element(By.ID, "x5gb02-topic-form-url").send_keys(entry.get("url", ""))
-                driver.find_element(By.ID, "x5gb02-topic-form-body").send_keys(f"{entry.get('message','')}\n{link}")
+                driver.find_element(By.ID, "x5gb02-topic-form-body").send_keys(f"{entry.get('message','')}\n{message_body} ")
 
                 driver.find_element(By.ID, "x5gb02-topic-form_submit").click()
                 print(f"Submitted form for {link}")

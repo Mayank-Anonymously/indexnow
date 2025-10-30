@@ -164,7 +164,7 @@ def submit_one_99(driver: webdriver.Chrome, url: str) -> bool:
         return False
 
 
-def run_for_99(headless: bool = False):
+def run_for_99(headless: bool = True):
     links = fetch_api_links()
     if not links:
         print("No links from API.")
@@ -196,4 +196,4 @@ def run_for_99(headless: bool = False):
 
 
 if __name__ == "__main__":
-    run_for_99(headless=False)
+    run_for_99(headless=True)

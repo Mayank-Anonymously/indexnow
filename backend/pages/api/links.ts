@@ -18,7 +18,10 @@ const filePath = path.join(process.cwd(), "data", "links.json");
 // List of Python scripts to trigger
 const pythonScripts = [
   "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\submit_form_json.py",
-  "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\kunden.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\kunden.py",
+
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\megamedia.py",
+  // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\meleium.py",
 
   // "C:\\Users\\HP\\Desktop\\auto-submit-bot\\elektropractticum.nl\\thepages_show.py",
 ];

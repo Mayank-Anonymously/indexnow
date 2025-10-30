@@ -89,7 +89,7 @@ def submit_one(driver: webdriver.Chrome, url: str) -> bool:
         return False
 
 
-def run_all(headless: bool = False):
+def run_all(headless: bool = True):
     links = fetch_api_links()
     if not links:
         print("No links to process.")
@@ -121,4 +121,4 @@ def run_all(headless: bool = False):
 
 
 if __name__ == "__main__":
-    run_all(headless=False)
+    run_all(headless=True)

@@ -5,6 +5,46 @@ export default function Home() {
   const [repeatCount, setRepeatCount] = useState(1);
   const [response, setResponse] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  function generateRandomName() {
+    const firstNames = [
+      "John",
+      "Alice",
+      "David",
+      "Emma",
+      "Liam",
+      "Sophia",
+      "Noah",
+      "Olivia",
+      "Mason",
+      "Ava",
+    ];
+    const lastNames = [
+      "Smith",
+      "Johnson",
+      "Brown",
+      "Taylor",
+      "Anderson",
+      "Thomas",
+      "Jackson",
+      "White",
+      "Harris",
+      "Martin",
+    ];
+
+    const first = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const last = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+    // Add random 2–3 digit number
+    const number = Math.floor(Math.random() * 900) + 100; // e.g. 123–999
+
+    // Randomly choose a format
+    const formats = [`${first}_${last}${number}`];
+
+    return formats[0];
+  }
+
+  // Example usage:
+  console.log(generateRandomName());
 
   const handleSubmit = async () => {
     if (!linksText.trim()) {
@@ -24,7 +64,7 @@ export default function Home() {
       var test = `<p><a href='${url}'>${url}</a></p>`;
       if (test) linksArray.push(test); // ✅ each link stored separately
     }
-    console.log(linksArray);
+
     if (linksArray.length === 0) {
       setResponse("⚠️ No valid links found.");
       setLoading(false);
@@ -37,9 +77,9 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           links: linksArray,
-          name: "jessy",
-          email: "jessy@gamail.com",
-          url: "https://unitedddd.com",
+          name: generateRandomName(),
+          email: `${generateRandomName()}@gmaill.com`,
+          url: `https://${generateRandomName()}.com`,
           message: "",
           repeat: repeatCount,
         }),
